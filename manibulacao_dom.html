@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação do DOM</title>
+</head>
+<body>
+    <script>
+        let titulo = document.querySelector('h1');
+        titulo.style.color = 'blue';
+    </script>
+    <h1>Manipulação do DOM</h1>
+
+    <p>Manipulação de um botão.</p>
+    <button id="meuBotao">Clique aqui</button>
+    <script>
+        document.getElementById('meuBotao').addEventListener('click', function() {
+            alert('Botão clicado!');
+        });
+    </script>
+
+    <input type="text" id="campoTexto" placeholder="Digite algo aqui">
+    <p id="saida"></p>
+    <script>
+        document.getElementById('campoTexto').addEventListener('keyup', function(event) {
+            document.getElementById('saida').innerText = "Você digitou: " + event.target.value;
+        });
+    </script>
+    
+
+</body>
+</html>

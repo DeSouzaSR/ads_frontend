@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Formulário</title>
+</head>
+<body>
+    <input type="text" id="usuario" placeholder="Nome do usuário" required>
+    <span id="erro"></span>
+
+    <script>
+        document.getElementById('usuario').addEventListener('input', function() {
+            const usuario = this.value;
+            const erro = document.getElementById('erro');
+
+            if (usuario.length < 3) {
+                erro.textContent = 'O nome de usuário deve ter pelo menos 3 caracteres.';
+            } else {
+                erro.textContent = '';
+            }
+        });
+    </script>
+
+    <p></p>
+    <input type="text" id="senha" placeholder="Senha" required>
+    <span id="erro-senha"></span>
+
+    <script>
+        document.getElementById('senha').addEventListener('input', function() {
+            const senha = this.value;
+            const erroSenha = document.getElementById('erro-senha');
+
+            if (senha.length < 6) {
+                erroSenha.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+            } else {
+                erroSenha.textContent = '';
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Inválido</title>
+</head>
+<body>
+    <form id="cadastro">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">cadastrar</button>
+    </form>
+
+    <script>
+        document.getElementById('cadastro').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const nome = document.getElementById('nome');
+            const email = document.getElementById('email');
+
+            if (nome.value.trim() === "") {
+                nome.style.border = '2px solid red';
+                alert('Nome é obrigatório');
+            } else {
+                nome.style.border = '2px solid green';
+            }
+
+            if (email.value.trim() === "") {
+                email.style.border = '2px solid red';
+                alert('Email é obrigatório');
+            } else {
+                email.style.border = '2px solid green';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Estilo</title>
+</head>
+<body>
+    <input type="text" id="campoNome" placeholder="Nome">
+    <p id="msgErro"></p>
+
+    <script>
+        document.getElementById('campoNome').addEventListener('blur', function() {
+            if (this.value.trim() === "") {
+                this.style.border = '2px solid red';
+                document.getElementById('msgErro').innerText = 'Nome obrigatório';
+            } else {
+                this.style.border = '2px solid green';
+                document.getElementById('msgErro').innerText = '';
+            }
+        });
+    </script>
+</body>
+</html>
